@@ -1,0 +1,24 @@
+select * from employees;
+
+insert into employees values
+(1, "name_goes_here", "2026-06-25", "1234567890", 100000);
+-- used to insert a data into the table
+
+insert into employees values
+(2, "name2", "2026-06-25", "1234567890", 100000),
+(3, "name3", "2026-06-25", "1234567890", 200000),
+(4, "name4", "2026-06-25", "1234567890", 400000);
+-- used to insert the multiple datas into the table
+
+insert into employees (id, emp_name, joined_date) values
+(6, "name_goes_here", "2026-06-25");
+-- specifies the columns getting inserted, columns not specifies will be null, the order doesn't matter
+
+select emp_name, salary from employees;
+-- used to visit the certain columns of the table
+
+select emp_name as name, salary from employees;
+-- used to change the name of the column temporarily and also the output will be in order given
+
+select * from employees where salary > 20000 ;
+-- this fetches the data based on the conditions provided
