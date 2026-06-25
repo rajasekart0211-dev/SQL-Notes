@@ -1,0 +1,36 @@
+show databases;
+-- used to show database
+
+
+CREATE database pandiyan_stores;
+-- used to create database 
+
+use pandiyan_stores;
+-- use to get into the database
+
+alter database read only = 0;
+-- used to alter the database
+
+create table employees (
+	id int,
+	emp_name varChar(50),
+    salary decimal(7,2),
+    joined_data date  
+);
+-- used to create the table in a database
+
+select * from employees;
+-- used to see all the data in a particular database
+
+alter table emloyees
+rename column emp_name to name;
+-- used to rename the column
+
+alter table employees
+modify column salary varchar(50)
+after ph_number; -- this sets the column to show after an particular column
+-- used to change the properties of an column
+
+alter table employees
+drop column email;
+-- used to drop column
