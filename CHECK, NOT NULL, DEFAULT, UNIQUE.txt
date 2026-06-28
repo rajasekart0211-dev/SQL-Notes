@@ -1,0 +1,45 @@
+use pandiyan_stores;
+
+create table products(
+	id int,
+    name varchar(30),
+    price decimal default 0
+    constraint check_price check (price < 1000)
+);
+-- checks the costraints before the tbale is being used
+-- default constraint keeps the default value assigned
+
+alter table products
+drop constraint check_price;
+-- used to drop the constraint created on a table
+
+alter table products
+add constraint check_price check (price < 1000);
+-- adds the constraint once the table is created
+
+alter table products
+alter price set default 0;
+-- this sets the default after the table is created
+
+insert into products values
+(1,"rice", 200),
+(2,"ginger", 50),
+(3,"tomato", 100),
+(4,"wheat", 150);
+
+insert into products value
+(5, "lays", 1000);
+
+alter table products
+add constraint unique (name);
+-- adds an unique constraint to an already existing column
+
+alter table products
+modify column id int not null;
+-- not null constraint cannot be added using the add constraint key word, Use modify keyword
+
+set sql_safe_updates = 0;
+
+drop table products;
+
+select * from products;
