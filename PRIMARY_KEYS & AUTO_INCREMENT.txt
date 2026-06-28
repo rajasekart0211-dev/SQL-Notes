@@ -1,0 +1,19 @@
+create table transactions(
+	id int primary key auto_increment,
+    amount decimal(6,2)
+);
+-- primary key constraint used
+-- automatically increments the id value each time a data inserted
+
+insert into transactions value
+(1, 3000);
+-- inserts as per the able requirements
+
+alter table transactions
+auto_increment 300;
+-- start the auto increment from the argument
+
+insert into transactions (amount) value
+(4000);
+
+select * from transactions;
